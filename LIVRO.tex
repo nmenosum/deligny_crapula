@@ -19,6 +19,8 @@
 
 \newcommand{\forceindent}{\leavevmode{\parindent=1,4em\indent}}
 
+\let\emph\textit
+
 \newcommand{\paragraphbr}[1]{\vfill\pagebreak\paragraph{#1}}
 \renewcommand\theparagraph{\Roman{paragraph}}
 \newcommand{\quebra}{\vfil\pagebreak}
@@ -89,20 +91,23 @@
 \newcommand{\italic}[1]{\fontspec[SmallCapsFeatures={FakeSlant=0.6}]{Formular-Italic}\textsc{#1}\fontspec[]{Formular-Italic}}
 
 %\usepackage{Formular}
-\newfontfamily\Formular{Formular-Regular}[
-BoldFont = Formular-Bold.otf,
-ItalicFont = Formular-Light.otf]
+%\newfontfamily\Formular{Formular-Regular}[
+%BoldFont = Formular-Bold.otf,
+%ItalicFont = Formular-regularitalic.otf]
 %\newfontfamily\Cobraarisca{Cobra arisca-Regular}
 %\newfontfamily\fakereceipt{fake receipt}
 
-%--------------------------------------------ALTERAR FONTE DA NOTA DE RODAPÉ
+\newfontfamily\Formularteste{Formular-Light}[
+ItalicFont = Formular-Lightitalic.otf]
 
-\setsansfont{Formular-Light}
+%--------------------------------------------ALTERAR FONTE DA NOTA DE RODAPÉ
+\newfontfamily\Formular{Formular}
+\setsansfont{Formular Light}
 
 
 \usepackage{etoolbox}
 \makeatletter
-\patchcmd{\@footnotetext}{\footnotesize}{\scriptsize\sffamily}{}{}
+\patchcmd{\@footnotetext}{\footnotesize}{\scriptsize\sffamily\protect}{}{}
 \makeatother
 
 %--------------------------------------------ALTERAR FONTE DA NUMERAÇÃO DE PÁGINA

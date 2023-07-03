@@ -3,7 +3,7 @@
 \RequirePackage{ulem}
 \RequirePackage{comment,lipsum}
 \RequirePackage{adforn}
-\RequirePackage{hifensextras}
+%\RequirePackage{hifensextras}
 \RequirePackage[para*]{manyfoot}
 \RequirePackage[stable,bottom,multiple]{footmisc}
 \RequirePackage{textcase}
@@ -94,7 +94,7 @@
 
 
 \DeclareOption{chicagofootnotes}{\makeatletter
-  \renewcommand\@makefntext[1]{\frenchspacing 
+  \renewcommand\@makefntext[1]{\frenchspacing\protect 
     \parindent 1em% 
     \@thefnmark.~#1}
     % endnotes
